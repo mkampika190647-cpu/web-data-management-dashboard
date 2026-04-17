@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Apartment KhunPa</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
+  background-color: #f5f7fa;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(0, 121, 107, 0.95);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+}
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+.navbar a:hover, .navbar a.active {
+  color: #b2dfdb;
+  transform: scale(1.08);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+  url('https://scontent-bkk1-2.xx.fbcdn.net/v/t39.30808-6/278139020_361768822634375_656603446676336321_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=iZrIePszq0MQ7kNvwGzJuMC&_nc_oc=Adlf5Dc7wPkvzMmR_30P4Kv31XRrH95cyzwkXznxU3c7X7-VBA28fU59xh0QgO5llYM&_nc_zt=23&_nc_ht=scontent-bkk1-2.xx&_nc_gid=j8cl73MuE3Ana42QYufLUQ&oh=00_Afc5YmR_otw0ZOvIg12KKvfKJQxSLrur7nyumSz76qo7rg&oe=68F69D27')
+  no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+}
+.hero h1 {
+  font-size: 58px;
+  margin-bottom: 15px;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  letter-spacing: 1px;
+  animation: fadeDown 1s ease-in-out;
+}
+.hero p {
+  font-size: 22px;
+  margin-bottom: 30px;
+  max-width: 800px;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.6);
+  animation: fadeUp 1.3s ease-in-out;
+}
+.hero a.button {
+  padding: 15px 35px;
+  background: linear-gradient(90deg, #26a69a, #00796b);
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  animation: fadeUp 1.6s ease-in-out;
+}
+.hero a.button:hover {
+  background: linear-gradient(90deg, #2bbbad, #009688);
+  transform: translateY(-4px);
+}
+
+/* Room Info */
+.room-info {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px 30px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  text-align: left;
+  color: #e0f2f1;
+  max-width: 450px;
+}
+.room-info h2 {
+  margin-top: 0;
+  font-size: 26px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+.room-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+.room-info li {
+  font-size: 18px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+.room-info i {
+  color: #b2dfdb;
+  font-size: 20px;
+}
+.fade-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Cards Section */
+.container {
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 20px;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.card {
+  background: white;
+  flex: 1 1 220px;
+  max-width: 260px;
+  border-radius: 18px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transition: all 0.4s;
+  transform: translateY(50px);
+  opacity: 0;
+}
+.card.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+  background: #e0f2f1;
+}
+.card i {
+  font-size: 50px;
+  color: #00796b;
+  margin-bottom: 15px;
+}
+.card h3 {
+  margin: 15px 0 10px;
+  font-size: 20px;
+}
+.card p {
+  font-size: 15px;
+  color: #555;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #00796b;
+  color: white;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+footer a {
+  color: white;
+  margin: 0 10px;
+  transition: all 0.3s;
+}
+footer a:hover {
+  color: #b2dfdb;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes fadeDown {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+   <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
+  <a href="room.html"><i class="fas fa-building"></i> Room</a>
+  <a href="customer.html"><i class="fas fa-user"></i> Customer</a>
+   <a href="rate.html"><i class="fas fa-money-bill-wave"></i> Rate</a>
+  <a href="bill.html"><i class="fas fa-file-invoice-dollar"></i> Bill</a>
+  <a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a>
+
+</div>
+
+<!-- Hero -->
+<div class="hero" id="home">
+  <h1>Apartment KhunPa</h1>
+  <p>จัดการข้อมูลลูกค้า ห้องพัก บิล และอัตราค่าบริการของอพาร์ทเมนท์คุณป้า</p>
+
+  <div class="room-info">
+    <h2>Room size</h2>
+    <ul>
+      <li class="fade-item"><i class="fas fa-bed"></i> Standard Room — 28 Sq.m</li>
+      <li class="fade-item"><i class="fas fa-couch"></i> Deluxe Room — 37 Sq.m</li>
+      <li class="fade-item"><i class="fas fa-users"></i> Family Room — 40 Sq.m</li>
+      <li class="fade-item"><i class="fas fa-star"></i> Premier Room — 106 Sq.m</li>
+    </ul>
+  </div>
+
+  <a href="#services" class="button">เริ่มต้นใช้งาน</a>
+</div>
+
+<!-- Cards Section -->
+<div class="container" id="services">
+  <div class="cards">
+    <a href="room.html" class="card-link"><div class="card"><i class="fas fa-building"></i><h3>Room</h3><p>จัดการห้องพักและประเภทห้อง</p></div></a>
+    <a href="customer.html" class="card-link"><div class="card"><i class="fas fa-user"></i><h3>Customer</h3><p>จัดการข้อมูลลูกค้า เพิ่ม แก้ไข และดูรายละเอียด</p></div></a>
+    <a href="bill.html" class="card-link"><div class="card"><i class="fas fa-file-invoice-dollar"></i><h3>Bill</h3><p>สร้างบิล ตรวจสอบการชำระเงิน</p></div></a>
+    <a href="rate.html" class="card-link"><div class="card"><i class="fas fa-money-bill-wave"></i><h3>Rate</h3><p>จัดการอัตราค่าบริการไฟฟ้าและน้ำ</p></div></a>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 Apartment KhunPa. All Rights Reserved.
+  <div style="margin-top:10px;">
+    <a href="https://www.facebook.com/Khunpaapartment711" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://line.me/ti/p/~khunpa711" target="_blank"><i class="fab fa-line"></i></a>
+    <a href="mailto:Khunpaapartment711@gmail.com"><i class="fas fa-envelope"></i></a>
+  </div>
+</footer>
+
+<!-- JS: Scroll Animation -->
+<script>
+const cards = document.querySelectorAll('.card');
+const fades = document.querySelectorAll('.fade-item');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+
+[...cards, ...fades].forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
