@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Room - Apartment KhunPa</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<style>
+body, html { margin:0; padding:0; font-family:'Roboto',sans-serif; background:#f5f7fa; }
+.navbar { position: fixed; top:0; left:0; right:0; background:#00796b; padding:15px 30px; display:flex; justify-content:center; gap:20px; z-index:1000; box-shadow:0 4px 15px rgba(0,0,0,0.2);}
+.navbar a { color:white; text-decoration:none; font-weight:600; font-size:18px; transition: all 0.3s; }
+.navbar a:hover, .navbar a.active { color:#b2dfdb; transform: scale(1.1); }
+
+.container { max-width:700px; margin:120px auto 60px; background:white; padding:40px; border-radius:15px; box-shadow:0 6px 25px rgba(0,0,0,0.1);}
+h2 { text-align:center; color:#00796b; margin-bottom:30px; }
+label { display:block; margin-top:15px; font-weight:600; }
+input, textarea, select { width:100%; padding:12px; margin-top:5px; border-radius:6px; border:1px solid #ccc; box-sizing:border-box; }
+input[readonly] { background:#eee; }
+input[type=submit], input[type=reset] { width:49%; margin-top:20px; background:#26a69a; color:white; border:none; cursor:pointer; border-radius:6px; font-weight:600; }
+input[type=submit]:hover, input[type=reset]:hover { background:#00796b; transform: translateY(-2px); }
+</style>
+</head>
+<body>
+<div class="navbar">
+    <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
+  <a href="room.html"><i class="fas fa-building"></i> Room</a>
+  <a href="customer.html"><i class="fas fa-user"></i> Customer</a>
+   <a href="rate.html"><i class="fas fa-money-bill-wave"></i> Rate</a>
+  <a href="bill.html"><i class="fas fa-file-invoice-dollar"></i> Bill</a>
+  <a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a>
+</div>
+
+<div class="container">
+  <h2>Room Information Form</h2>
+  <form id="roomForm" action="php_file/insert_room.php" method="post">
+      <label for="Room_Number">Room Number:</label>
+      <input type="text" id="Room_Number" name="Room_Number" required>
+      
+      <label for="Room_size">Room Size (Sq.m):</label>
+      <select id="Room_size" name="Room_size" required>
+        <option value="">-- Select Room Size --</option>
+        <option value="28">28 Sq.m</option>
+        <option value="37">37 Sq.m</option>
+        <option value="40">40 Sq.m</option>
+        <option value="106">106 Sq.m</option>
+      </select>
+
+      <label for="Room_count">Room Type:</label>
+      <select id="Room_count" name="Room_count" onchange="updateAmenities()" required>
+        <option value="">-- Select Room Type --</option>
+        <option value="Standard Room">Standard Room</option>
+        <option value="Deluxe Room">Deluxe Room</option>
+        <option value="Family Room">Family Room</option>
+        <option value="Premier Room">Premier Room</option>
+      </select>
+
+      <label for="Amenities">Amenities:</label>
+      <input type="text" id="Amenities" name="Amenities" readonly>
+
+      <input type="submit" value="Save Data">
+      <input type="reset" value="Clear Form">
+  </form>
+</div>
+
+<script>
+function updateAmenities(){
+  const select = document.getElementById('Room_count');
+  const roomType = select.value;
+  const amenitiesInput = document.getElementById('Amenities');
+  let amenities = [];
+  switch(roomType){
+    case 'Standard Room': amenities=['FreeWi-Fi','SmartTV']; break;
+    case 'Deluxe Room': amenities=['FreeWi-Fi','SmartTV','WorkTable']; break;
+    case 'Family Room': amenities=['FreeWi-Fi','SmartTV','WorkTable']; break;
+    case 'Premier Room': amenities=['FreeWi-Fi','SmartTV','WorkTable','SafetyBox','TwoBedroom']; break;
+    default: amenities=[];
+  }
+  amenitiesInput.value = amenities.join(', ');
+}
+
+// AJAX Submit
+function ajaxFormSubmit(formId, phpFile, nextPage){
+  const form = document.getElementById(formId);
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const formData = new FormData(form);
+    fetch(phpFile, { method:'POST', body: formData })
+    .then(res => res.text())
+    .then(data => {
+      alert(data);
+      if(nextPage) window.location.href = nextPage;
+    })
+    .catch(err => { console.error(err); alert('Error: '+err); });
+  });
+}
+
+ajaxFormSubmit('roomForm','php_file/insert_room.php','customer.html');
+</script>
+</body>
+</html>
