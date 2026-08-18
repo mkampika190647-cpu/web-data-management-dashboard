@@ -119,7 +119,7 @@ web-data-management-dashboard/
 
 โครงสร้างฐานข้อมูลและความสัมพันธ์ระหว่าง Room, Customer, Bill และ Rate
 
-<img src="database/ERD.png" width="750">
+<img src="database/RED.png" width="750">
 
 ## Application Screenshots
 
