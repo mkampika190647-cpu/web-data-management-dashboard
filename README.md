@@ -116,12 +116,11 @@ web-data-management-dashboard/
 ```
 
 ## ERD
-
 โครงสร้างฐานข้อมูลและความสัมพันธ์ระหว่าง Room, Customer, Bill และ Rate
-
 <p align="center">
-  <img src="database/RED.png" width="750" alt="Apartment Management System ERD">
+  <img src="web-data-management-dashboard/database/RED.png" width="750" alt="Apartment Management System ERD">
 </p>
+
 
 ## Application Screenshots
 
