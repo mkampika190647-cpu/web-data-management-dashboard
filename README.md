@@ -129,48 +129,45 @@ web-data-management-dashboard/
 
 ### 1. Home Page
 
-หน้าหลักของระบบ Apartment KhunPa แสดงข้อมูลประเภทและขนาดห้องพัก
-พร้อมเมนูสำหรับเข้าสู่ส่วนต่าง ๆ ของระบบ
-
-![Home Page](screenshots/01-home.png)
+<p align="center">
+  <img src="./screenshots/01-home.png" width="750" alt="Home Page">
+</p>
 
 ### 2. Main Menu
 
-หน้าสำหรับเข้าถึงฟังก์ชันหลัก ได้แก่ Room, Customer, Bill และ Rate
-
-![Main Menu](screenshots/02-main-menu.png)
+<p align="center">
+  <img src="./screenshots/02-main-menu.png" width="750" alt="Main Menu">
+</p>
 
 ### 3. Room Management
 
-แบบฟอร์มสำหรับบันทึกข้อมูลห้องพัก เช่น หมายเลขห้อง ขนาดห้อง
-ประเภทห้อง และสิ่งอำนวยความสะดวก
-
-![Room Management](screenshots/03-room-form.png)
+<p align="center">
+  <img src="./screenshots/03-room-form.png" width="750" alt="Room Management">
+</p>
 
 ### 4. Customer Management
 
-แบบฟอร์มสำหรับบันทึกข้อมูลผู้เช่า
-
-![Customer Management](screenshots/04-customer-form.png)
+<p align="center">
+  <img src="./screenshots/04-customer-form.png" width="750" alt="Customer Management">
+</p>
 
 ### 5. Utility Rate Management
 
-แบบฟอร์มสำหรับกำหนดอัตราค่าไฟฟ้าและค่าน้ำ
-
-![Utility Rate Management](screenshots/05-rate-form.png)
+<p align="center">
+  <img src="./screenshots/05-rate-form.png" width="750" alt="Utility Rate Management">
+</p>
 
 ### 6. Bill Management
 
-แบบฟอร์มสำหรับบันทึกข้อมูลบิลของผู้เช่า
-
-![Bill Management](screenshots/06-bill-form.png)
+<p align="center">
+  <img src="./screenshots/06-bill-form.png" width="750" alt="Bill Management">
+</p>
 
 ### 7. Dashboard
 
-Dashboard สำหรับสรุปข้อมูลห้องพัก ผู้เช่า และยอดบิล
-
-![Dashboard](screenshots/07-dashboard.png)
-
+<p align="center">
+  <img src="./screenshots/07-dashboard.png" width="750" alt="Dashboard">
+</p>
 
 > **หมายเหตุเกี่ยวกับ Dashboard:** ภาพตัวอย่างแสดงส่วนติดต่อผู้ใช้ของ Dashboard สำหรับ Portfolio โดยข้อมูลบน Dashboard จะถูกดึงจากฐานข้อมูล MySQL ผ่าน PHP Back-end เมื่อระบบทำงานในสภาพแวดล้อมที่เชื่อมต่อฐานข้อมูล
 
