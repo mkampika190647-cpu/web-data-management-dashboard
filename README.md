@@ -131,9 +131,7 @@ web-data-management-dashboard/
 หน้าหลักของระบบ Apartment KhunPa แสดงข้อมูลประเภทและขนาดห้องพัก
 พร้อมเมนูสำหรับเข้าสู่ส่วนต่าง ๆ ของระบบ
 
-<p align="center">
-  <img src="web-data-management-dashboard/screenshots/01-home.jpg" width="750">
-</p>
+<img src="web-data-management-dashboard/screenshots/01-home.jpg" width="750">
 
 ### 2. Main Menu
 หน้าสำหรับเข้าถึงฟังก์ชันหลัก ได้แก่ Room, Customer, Bill และ Rate
