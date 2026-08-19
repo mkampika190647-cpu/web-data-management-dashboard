@@ -132,72 +132,54 @@ web-data-management-dashboard/
 หน้าหลักของระบบ Apartment KhunPa แสดงข้อมูลประเภทและขนาดห้องพัก
 พร้อมเมนูสำหรับเข้าสู่ส่วนต่าง ๆ ของระบบ
 
-<p align="center">
-  <img src="screenshots/01-home.png" width="750">
-</p>
+![Home Page](screenshots/01-home.png)
 
 ### 2. Main Menu
 
 หน้าสำหรับเข้าถึงฟังก์ชันหลัก ได้แก่ Room, Customer, Bill และ Rate
-เพื่อช่วยให้ผู้ใช้งานจัดการข้อมูลแต่ละส่วนได้สะดวก
 
-<p align="center">
-  <img src="screenshots/02-main-menu.png" width="750">
-</p>
+![Main Menu](screenshots/02-main-menu.png)
 
 ### 3. Room Management
 
 แบบฟอร์มสำหรับบันทึกข้อมูลห้องพัก เช่น หมายเลขห้อง ขนาดห้อง
 ประเภทห้อง และสิ่งอำนวยความสะดวก
 
-<p align="center">
-  <img src="screenshots/03-room-form.png" width="750">
-</p>
+![Room Management](screenshots/03-room-form.png)
 
 ### 4. Customer Management
 
-แบบฟอร์มสำหรับบันทึกข้อมูลผู้เช่า เช่น รหัสลูกค้า หมายเลขห้อง
-วันที่ทำสัญญา และวันที่ชำระค่าห้อง
+แบบฟอร์มสำหรับบันทึกข้อมูลผู้เช่า
 
-<p align="center">
-  <img src="screenshots/04-customer-form.png" width="750">
-</p>
+![Customer Management](screenshots/04-customer-form.png)
 
 ### 5. Utility Rate Management
 
-แบบฟอร์มสำหรับกำหนดและจัดเก็บอัตราค่าไฟฟ้าและค่าน้ำ
-ที่ใช้ในการคำนวณค่าใช้จ่ายของผู้เช่า
+แบบฟอร์มสำหรับกำหนดอัตราค่าไฟฟ้าและค่าน้ำ
 
-<p align="center">
-  <img src="screenshots/05-rate-form.png" width="750">
-</p>
+![Utility Rate Management](screenshots/05-rate-form.png)
 
 ### 6. Bill Management
 
 แบบฟอร์มสำหรับบันทึกข้อมูลบิลของผู้เช่า
-ประกอบด้วยค่าไฟฟ้า ค่าน้ำ ค่าเช่าห้อง และอัตราค่าสาธารณูปโภคที่เกี่ยวข้อง
 
-<p align="center">
-  <img src="screenshots/06-bill-form.png" width="750">
-</p>
+![Bill Management](screenshots/06-bill-form.png)
 
 ### 7. Dashboard
 
 Dashboard สำหรับสรุปข้อมูลห้องพัก ผู้เช่า และยอดบิล
-พร้อมแสดงข้อมูลในรูปแบบตัวชี้วัด ตาราง และกราฟ เพื่อช่วยในการติดตามข้อมูล
 
-<p align="center">
-  <img src="screenshots/07-dashboard.png" width="750">
-</p>
+![Dashboard](screenshots/07-dashboard.png)
 
-> **หมายเหตุเกี่ยวกับ Dashboard:** Dashboard ดึงข้อมูลผ่านระบบ Backend ที่พัฒนาด้วย PHP และ MySQL ดังนั้นภาพตัวอย่างนี้แสดงส่วนติดต่อผู้ใช้ของ Dashboard ในขณะที่ไม่ได้เปิดการเชื่อมต่อฐานข้อมูลในสภาพแวดล้อมที่ใช้สำหรับ Portfolio
+
+> **หมายเหตุเกี่ยวกับ Dashboard:** ภาพตัวอย่างแสดงส่วนติดต่อผู้ใช้ของ Dashboard สำหรับ Portfolio โดยข้อมูลบน Dashboard จะถูกดึงจากฐานข้อมูล MySQL ผ่าน PHP Back-end เมื่อระบบทำงานในสภาพแวดล้อมที่เชื่อมต่อฐานข้อมูล
 
 ## Project Type
 
-**Academic Project**
+**Academic Project — Web Application & Relational Database Development**
 
-โปรเจกต์นี้พัฒนาขึ้นเพื่อฝึกการออกแบบฐานข้อมูล
-การพัฒนา Web Application การเชื่อมต่อ PHP กับ MySQL
-และการนำข้อมูลมาแสดงผลผ่าน Dashboard
+โปรเจกต์นี้พัฒนาขึ้นเพื่อประยุกต์ใช้การออกแบบฐานข้อมูลเชิงสัมพันธ์
+การพัฒนา Web Application การเชื่อมต่อ Front-end กับ PHP/MySQL
+การจัดการข้อมูลด้วย SQL และการนำข้อมูลมาแสดงผลผ่าน Dashboard
 
 > **Note:** ข้อมูลที่แสดงใน Repository นี้ใช้เพื่อการศึกษาและการนำเสนอผลงานใน Portfolio
