@@ -128,45 +128,38 @@ web-data-management-dashboard/
 ข้อมูลลูกค้า อัตราค่าสาธารณูปโภค การออกบิล และ Dashboard สำหรับสรุปข้อมูล
 
 ### 1. Home Page
-
 <p align="center">
-  <img src="./screenshots/01-home.png" width="750" alt="Home Page">
+  <img src="web-data-management-dashboard/screenshots/01-home.png" width="750" alt="Home Page">
 </p>
 
 ### 2. Main Menu
-
 <p align="center">
-  <img src="./screenshots/02-main-menu.png" width="750" alt="Main Menu">
+  <img src="web-data-management-dashboard/screenshots/02-main-menu.png" width="750" alt="Main Menu">
 </p>
 
 ### 3. Room Management
-
 <p align="center">
-  <img src="./screenshots/03-room-form.png" width="750" alt="Room Management">
+  <img src="web-data-management-dashboard/screenshots/03-room-form.png" width="750" alt="Room Management">
 </p>
 
 ### 4. Customer Management
-
 <p align="center">
-  <img src="./screenshots/04-customer-form.png" width="750" alt="Customer Management">
+  <img src="web-data-management-dashboard/screenshots/04-customer-form.png" width="750" alt="Customer Management">
 </p>
 
 ### 5. Utility Rate Management
-
 <p align="center">
-  <img src="./screenshots/05-rate-form.png" width="750" alt="Utility Rate Management">
+  <img src="web-data-management-dashboard/screenshots/05-rate-form.png" width="750" alt="Utility Rate Management">
 </p>
 
 ### 6. Bill Management
-
 <p align="center">
-  <img src="./screenshots/06-bill-form.png" width="750" alt="Bill Management">
+  <img src="web-data-management-dashboard/screenshots/06-bill-form.png" width="750" alt="Bill Management">
 </p>
 
 ### 7. Dashboard
-
 <p align="center">
-  <img src="./screenshots/07-dashboard.png" width="750" alt="Dashboard">
+  <img src="web-data-management-dashboard/screenshots/07-dashboard.png" width="750" alt="Dashboard">
 </p>
 
 > **หมายเหตุเกี่ยวกับ Dashboard:** ภาพตัวอย่างแสดงส่วนติดต่อผู้ใช้ของ Dashboard สำหรับ Portfolio โดยข้อมูลบน Dashboard จะถูกดึงจากฐานข้อมูล MySQL ผ่าน PHP Back-end เมื่อระบบทำงานในสภาพแวดล้อมที่เชื่อมต่อฐานข้อมูล
