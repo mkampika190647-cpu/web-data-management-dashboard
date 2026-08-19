@@ -128,61 +128,69 @@ web-data-management-dashboard/
 ข้อมูลลูกค้า อัตราค่าสาธารณูปโภค การออกบิล และ Dashboard สำหรับสรุปข้อมูล
 
 ### 1. Home Page
+
 หน้าหลักของระบบ Apartment KhunPa แสดงข้อมูลประเภทและขนาดห้องพัก
 พร้อมเมนูสำหรับเข้าสู่ส่วนต่าง ๆ ของระบบ
 
-<img src="web-data-management-dashboard/screenshots/01-home.jpg" width="750">
+<p align="center">
+  <img src="screenshots/01-home.png" width="750">
+</p>
 
 ### 2. Main Menu
+
 หน้าสำหรับเข้าถึงฟังก์ชันหลัก ได้แก่ Room, Customer, Bill และ Rate
 เพื่อช่วยให้ผู้ใช้งานจัดการข้อมูลแต่ละส่วนได้สะดวก
 
 <p align="center">
-  <img src="web-data-management-dashboard/screenshots/02-main-menu.jpg" width="750">
+  <img src="screenshots/02-main-menu.png" width="750">
 </p>
 
 ### 3. Room Management
+
 แบบฟอร์มสำหรับบันทึกข้อมูลห้องพัก เช่น หมายเลขห้อง ขนาดห้อง
 ประเภทห้อง และสิ่งอำนวยความสะดวก
 
 <p align="center">
-  <img src="web-data-management-dashboard/screenshots/03-room-form.jpg" width="750">
+  <img src="screenshots/03-room-form.png" width="750">
 </p>
 
 ### 4. Customer Management
-แบบฟอร์มสำหรับจัดเก็บข้อมูลผู้เช่า เชื่อมโยงลูกค้ากับหมายเลขห้อง
-รวมถึงวันที่ทำสัญญาและวันที่ชำระค่าห้อง
+
+แบบฟอร์มสำหรับบันทึกข้อมูลผู้เช่า เช่น รหัสลูกค้า หมายเลขห้อง
+วันที่ทำสัญญา และวันที่ชำระค่าห้อง
 
 <p align="center">
-  <img src="web-data-management-dashboard/screenshots/04-customer-form.jpg" width="750">
+  <img src="screenshots/04-customer-form.png" width="750">
 </p>
 
 ### 5. Utility Rate Management
+
 แบบฟอร์มสำหรับกำหนดและจัดเก็บอัตราค่าไฟฟ้าและค่าน้ำ
-เพื่อใช้ในการจัดการข้อมูลค่าใช้จ่ายของหอพัก
+ที่ใช้ในการคำนวณค่าใช้จ่ายของผู้เช่า
 
 <p align="center">
-  <img src="web-data-management-dashboard/screenshots/05-rate-form.jpg" width="750">
+  <img src="screenshots/05-rate-form.png" width="750">
 </p>
 
-### 6. Billing Management
-แบบฟอร์มสำหรับจัดเก็บข้อมูลบิล โดยเชื่อมโยง Customer ID และ Rate ID
-กับค่าไฟฟ้า ค่าน้ำ และค่าเช่าห้อง
+### 6. Bill Management
+
+แบบฟอร์มสำหรับบันทึกข้อมูลบิลของผู้เช่า
+ประกอบด้วยค่าไฟฟ้า ค่าน้ำ ค่าเช่าห้อง และอัตราค่าสาธารณูปโภคที่เกี่ยวข้อง
 
 <p align="center">
-  <img src="web-data-management-dashboard/screenshots/06-bill-form.jpg" width="750">
+  <img src="screenshots/06-bill-form.png" width="750">
 </p>
 
 ### 7. Dashboard
+
 Dashboard สำหรับสรุปข้อมูลห้องพัก ผู้เช่า และยอดบิล
-พร้อมส่วนแสดงข้อมูลเชิงสรุปและสถานะห้องพัก
+พร้อมแสดงข้อมูลในรูปแบบตัวชี้วัด ตาราง และกราฟ เพื่อช่วยในการติดตามข้อมูล
 
 <p align="center">
-  <img src="web-data-management-dashboard/screenshots/07-dashboard.jpg" width="750">
+  <img src="screenshots/07-dashboard.png" width="750">
 </p>
 
-> **Dashboard Note:** Dashboard ดึงข้อมูลผ่านระบบ Backend ที่พัฒนาด้วย PHP และเชื่อมต่อกับฐานข้อมูล MySQL
-> ภาพตัวอย่างด้านบนเป็นการแสดงหน้าตาของ Dashboard ในขณะที่ยังไม่ได้เชื่อมต่อฐานข้อมูลสำหรับการแสดงผลงานใน Portfolio
+> **หมายเหตุเกี่ยวกับ Dashboard:** Dashboard ดึงข้อมูลผ่านระบบ Backend ที่พัฒนาด้วย PHP และ MySQL ดังนั้นภาพตัวอย่างนี้แสดงส่วนติดต่อผู้ใช้ของ Dashboard ในขณะที่ไม่ได้เปิดการเชื่อมต่อฐานข้อมูลในสภาพแวดล้อมที่ใช้สำหรับ Portfolio
 
 ## Project Type
 
