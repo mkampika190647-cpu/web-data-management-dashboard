@@ -124,9 +124,67 @@ web-data-management-dashboard/
 
 ## Application Screenshots
 
-ตัวอย่างหน้าจอการทำงานของระบบจะแสดงในส่วนนี้
+ตัวอย่างหน้าจอการทำงานของระบบ ตั้งแต่หน้าหลัก การจัดการข้อมูลห้องพัก
+ข้อมูลลูกค้า อัตราค่าสาธารณูปโภค การออกบิล และ Dashboard สำหรับสรุปข้อมูล
 
-<!-- เพิ่ม screenshots หลังจากอัปโหลดรูปลงโฟลเดอร์ screenshots -->
+### 1. Home Page
+หน้าหลักของระบบ Apartment KhunPa แสดงข้อมูลประเภทและขนาดห้องพัก
+พร้อมเมนูสำหรับเข้าสู่ส่วนต่าง ๆ ของระบบ
+
+<p align="center">
+  <img src="web-data-management-dashboard/screenshots/01-home.jpg" width="750">
+</p>
+
+### 2. Main Menu
+หน้าสำหรับเข้าถึงฟังก์ชันหลัก ได้แก่ Room, Customer, Bill และ Rate
+เพื่อช่วยให้ผู้ใช้งานจัดการข้อมูลแต่ละส่วนได้สะดวก
+
+<p align="center">
+  <img src="web-data-management-dashboard/screenshots/02-main-menu.jpg" width="750">
+</p>
+
+### 3. Room Management
+แบบฟอร์มสำหรับบันทึกข้อมูลห้องพัก เช่น หมายเลขห้อง ขนาดห้อง
+ประเภทห้อง และสิ่งอำนวยความสะดวก
+
+<p align="center">
+  <img src="web-data-management-dashboard/screenshots/03-room-form.jpg" width="750">
+</p>
+
+### 4. Customer Management
+แบบฟอร์มสำหรับจัดเก็บข้อมูลผู้เช่า เชื่อมโยงลูกค้ากับหมายเลขห้อง
+รวมถึงวันที่ทำสัญญาและวันที่ชำระค่าห้อง
+
+<p align="center">
+  <img src="web-data-management-dashboard/screenshots/04-customer-form.jpg" width="750">
+</p>
+
+### 5. Utility Rate Management
+แบบฟอร์มสำหรับกำหนดและจัดเก็บอัตราค่าไฟฟ้าและค่าน้ำ
+เพื่อใช้ในการจัดการข้อมูลค่าใช้จ่ายของหอพัก
+
+<p align="center">
+  <img src="web-data-management-dashboard/screenshots/05-rate-form.jpg" width="750">
+</p>
+
+### 6. Billing Management
+แบบฟอร์มสำหรับจัดเก็บข้อมูลบิล โดยเชื่อมโยง Customer ID และ Rate ID
+กับค่าไฟฟ้า ค่าน้ำ และค่าเช่าห้อง
+
+<p align="center">
+  <img src="web-data-management-dashboard/screenshots/06-bill-form.jpg" width="750">
+</p>
+
+### 7. Dashboard
+Dashboard สำหรับสรุปข้อมูลห้องพัก ผู้เช่า และยอดบิล
+พร้อมส่วนแสดงข้อมูลเชิงสรุปและสถานะห้องพัก
+
+<p align="center">
+  <img src="web-data-management-dashboard/screenshots/07-dashboard.jpg" width="750">
+</p>
+
+> **Dashboard Note:** Dashboard ดึงข้อมูลผ่านระบบ Backend ที่พัฒนาด้วย PHP และเชื่อมต่อกับฐานข้อมูล MySQL
+> ภาพตัวอย่างด้านบนเป็นการแสดงหน้าตาของ Dashboard ในขณะที่ยังไม่ได้เชื่อมต่อฐานข้อมูลสำหรับการแสดงผลงานใน Portfolio
 
 ## Project Type
 
