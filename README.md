@@ -1,32 +1,35 @@
 # Apartment Management & Dashboard System
 
-**Web Application & Database Project | PHP · MySQL · SQL · HTML · CSS · JavaScript · phpMyAdmin**
+**Web Application & Database Development | PHP · MySQL · SQL · JavaScript · Chart.js**
+
+โปรเจกต์พัฒนาเว็บแอปพลิเคชันสำหรับจัดเก็บและจัดการข้อมูลอพาร์ตเมนต์ โดยเชื่อมต่อหน้าเว็บกับฐานข้อมูล MySQL ผ่าน PHP และนำข้อมูลจากระบบมาแสดงผลผ่าน Dashboard
 
 ## Project Overview
 
-โครงงานนี้เป็นการพัฒนาระบบบริหารจัดการข้อมูลอพาร์ตเมนต์ผ่านเว็บแอปพลิเคชัน
-สำหรับจัดเก็บและจัดการข้อมูลห้องพัก ผู้เช่า บิล และอัตราค่าน้ำค่าไฟ
-โดยใช้ MySQL ในการจัดเก็บข้อมูลและออกแบบฐานข้อมูลแบบ Relational Database
+ระบบนี้พัฒนาขึ้นสำหรับจัดเก็บข้อมูลที่เกี่ยวข้องกับการบริหารอพาร์ตเมนต์ ได้แก่ ข้อมูลห้องพัก ผู้เช่า อัตราค่าน้ำค่าไฟ และบิล
 
-ระบบสามารถเพิ่มและจัดการข้อมูลผ่านแบบฟอร์มบนเว็บไซต์
-พร้อม Dashboard สำหรับสรุปและแสดงผลข้อมูล เพื่อช่วยให้สามารถตรวจสอบ
-ค้นหา และติดตามข้อมูลที่เกี่ยวข้องกับการบริหารจัดการอพาร์ตเมนต์ได้สะดวกมากขึ้น
+ผู้ใช้งานสามารถกรอกข้อมูลผ่านแบบฟอร์มบนเว็บไซต์ จากนั้น PHP จะรับข้อมูลและบันทึกลงฐานข้อมูล MySQL
 
-## Key Features
+นอกจากนี้ยังมี Dashboard สำหรับดึงข้อมูลจากฐานข้อมูลมาสรุปเป็น KPI กราฟ และตาราง เพื่อดูภาพรวมของข้อมูลภายในระบบ
 
-- จัดการข้อมูลห้องพัก (Room Management)
-- จัดการข้อมูลผู้เช่า (Customer Management)
-- บันทึกและจัดการข้อมูลบิลค่าเช่า ค่าน้ำ และค่าไฟ
-- จัดการอัตราค่าน้ำและค่าไฟ
-- เชื่อมโยงข้อมูลระหว่างตารางด้วย Relational Database
-- กรองและค้นหาข้อมูลตามห้องพัก
-- แสดง KPI เช่น จำนวนห้อง จำนวนผู้เช่า และยอดบิลรวม
-- แสดงข้อมูลผ่านกราฟและตารางบน Dashboard
+## Main Features
+
+- บันทึกข้อมูลห้องพัก
+- บันทึกข้อมูลผู้เช่าและเชื่อมโยงกับหมายเลขห้อง
+- กำหนดอัตราค่าน้ำและค่าไฟ
+- บันทึกข้อมูลบิลค่าไฟ ค่าน้ำ และค่าเช่า
+- เชื่อมต่อ Web Form กับ PHP และ MySQL
+- แสดงจำนวนห้องและจำนวนผู้เช่าบน Dashboard
+- คำนวณและแสดงยอดบิลรวม
+- แสดงสถานะห้องพัก Occupied และ Vacant
+- แสดงข้อมูลผู้เช่าและยอดบิลในรูปแบบตาราง
+- กรองข้อมูล Dashboard ตามหมายเลขห้อง
 
 ## Technologies Used
 
 - PHP
-- MySQL / SQL
+- MySQL
+- SQL
 - HTML
 - CSS
 - JavaScript
@@ -38,47 +41,175 @@
 
 ## Database Design
 
-ฐานข้อมูลประกอบด้วย 4 ตารางหลัก ได้แก่
+ระบบใช้ฐานข้อมูล MySQL ชื่อ `apartment` และแบ่งข้อมูลออกเป็น 4 ตารางหลัก ได้แก่
 
-- `room` — จัดเก็บข้อมูลห้องพัก
-- `customer` — จัดเก็บข้อมูลผู้เช่า
-- `bill` — จัดเก็บข้อมูลบิล
-- `rate` — จัดเก็บข้อมูลอัตราค่าน้ำและค่าไฟ
+| Table | Description |
+|---|---|
+| `room` | จัดเก็บข้อมูลห้องพัก |
+| `customer` | จัดเก็บข้อมูลผู้เช่าและหมายเลขห้อง |
+| `rate` | จัดเก็บอัตราค่าน้ำและค่าไฟ |
+| `bill` | จัดเก็บข้อมูลค่าไฟ ค่าน้ำ ค่าเช่า และข้อมูลที่เกี่ยวข้องกับบิล |
 
-ตารางต่าง ๆ เชื่อมโยงกันด้วย Primary Key และ Foreign Key
-เพื่อจัดโครงสร้างข้อมูลให้เป็นระบบและรองรับการเรียกใช้ข้อมูลที่สัมพันธ์กัน
+ข้อมูลในแต่ละตารางถูกนำมาเชื่อมโยงกันเพื่อใช้ทั้งในส่วนการบันทึกข้อมูลและการแสดงผลบน Dashboard
 
-## Dashboard
+ตัวอย่างเช่น ก่อนบันทึกข้อมูลผู้เช่า ระบบจะตรวจสอบก่อนว่าหมายเลขห้องที่ระบุมีอยู่ในตาราง `room` หรือไม่
 
-Dashboard ใช้สำหรับสรุปและแสดงผลข้อมูลสำคัญของระบบ เช่น
+## Data Entry Forms
 
-- จำนวนห้องทั้งหมด
-- จำนวนผู้เช่า
-- ยอดบิลรวม
-- กราฟแสดงข้อมูลบิล
-- สัดส่วนสถานะห้องพัก
-- ตารางข้อมูลผู้เช่า
-- การกรองข้อมูลตามห้องพัก
+ระบบมีแบบฟอร์มสำหรับบันทึกข้อมูลหลัก 4 ส่วน
+
+### 1. Room
+
+ใช้สำหรับบันทึกข้อมูลห้องพัก เช่น
+
+- Room Number
+- Room Size
+- Room Type
+- Amenities
+
+ระบบมีประเภทห้องหลายแบบ เช่น Standard Room, Deluxe Room, Family Room และ Premier Room
+
+### 2. Customer
+
+ใช้สำหรับบันทึกข้อมูลผู้เช่า เช่น
+
+- Customer ID
+- Room Number
+- Contract Date
+- Note
+- Room Payment Date
+
+ข้อมูลผู้เช่าจะเชื่อมโยงกับหมายเลขห้องที่มีอยู่ในระบบ
+
+### 3. Rate
+
+ใช้สำหรับบันทึกอัตราค่าสาธารณูปโภค ได้แก่
+
+- Rate ID
+- Electricity Unit
+- Water Unit
+
+### 4. Bill
+
+ใช้สำหรับบันทึกข้อมูลบิล ได้แก่
+
+- Bill ID
+- Customer ID
+- Electric Bill
+- Water Bill
+- Rental Bill
+- Rate ID
+
+ข้อมูลจากแบบฟอร์มถูกส่งไปยัง PHP Back-end และบันทึกลง MySQL
 
 ## System Workflow
 
-1. เพิ่มและจัดการข้อมูลห้องพัก
-2. บันทึกข้อมูลผู้เช่าและเชื่อมโยงกับห้องพัก
+การทำงานหลักของระบบเป็นดังนี้
+
+1. บันทึกข้อมูลห้องพัก
+2. บันทึกข้อมูลผู้เช่าและระบุห้องพัก
 3. กำหนดอัตราค่าน้ำและค่าไฟ
 4. บันทึกข้อมูลบิลของผู้เช่า
-5. จัดเก็บข้อมูลลงฐานข้อมูล MySQL
-6. ดึงข้อมูลจากฐานข้อมูลผ่าน PHP
-7. สรุปและแสดงผลข้อมูลผ่าน Dashboard
+5. PHP รับข้อมูลจาก Web Form
+6. บันทึกข้อมูลลงฐานข้อมูล MySQL
+7. ใช้ SQL Query ดึงและรวมข้อมูลจากฐานข้อมูล
+8. ส่งข้อมูลให้ Dashboard ในรูปแบบ JSON
+9. แสดงผลผ่าน KPI, Chart และ Data Table
 
-## My Responsibilities
+## Dashboard
 
-- ออกแบบและพัฒนา Web Application สำหรับจัดการข้อมูลอพาร์ตเมนต์
-- ออกแบบโครงสร้าง Relational Database และความสัมพันธ์ระหว่างตาราง
-- พัฒนาแบบฟอร์มสำหรับจัดการข้อมูล Room, Customer, Rate และ Bill
-- พัฒนา PHP Back-end สำหรับเชื่อมต่อและจัดการข้อมูลใน MySQL
-- เขียน SQL Queries สำหรับเพิ่มและเรียกใช้ข้อมูล
-- เชื่อมต่อ Front-end กับ PHP และ MySQL
-- พัฒนา Dashboard สำหรับแสดง KPI กราฟ และตารางข้อมูล
+Dashboard ใช้ข้อมูลจากฐานข้อมูล MySQL เพื่อสรุปข้อมูลภายในระบบ
+
+### KPI
+
+แสดงตัวชี้วัดหลัก ได้แก่
+
+- **จำนวนห้องทั้งหมด**
+- **จำนวนผู้เช่า**
+- **ยอดบิลรวม**
+
+ยอดบิลรวมคำนวณจาก
+
+```text
+Electric Bill + Water Bill + Rental Bill
+```
+
+### Room Filter
+
+ผู้ใช้งานสามารถเลือกหมายเลขห้องจาก Dropdown เพื่อดูข้อมูลเฉพาะห้องที่ต้องการ
+
+เมื่อเลือกห้อง ระบบจะดึงข้อมูลใหม่จาก PHP Back-end และอัปเดตข้อมูลบน Dashboard
+
+### Bill Chart
+
+ใช้ Chart.js สร้าง Line Chart สำหรับแสดงยอดบิลของแต่ละห้อง
+
+กราฟช่วยให้สามารถเปรียบเทียบยอดบิลระหว่างห้องพักได้จากข้อมูลที่บันทึกอยู่ในฐานข้อมูล
+
+### Room Status
+
+สถานะห้องถูกกำหนดจากข้อมูลผู้เช่า
+
+- **OCCUPIED** — มีข้อมูลผู้เช่าเชื่อมโยงกับห้อง
+- **VACANT** — ไม่มีข้อมูลผู้เช่าเชื่อมโยงกับห้อง
+
+จากนั้นนำจำนวนห้องแต่ละสถานะมาแสดงด้วย Doughnut Chart
+
+### Customer Table
+
+Dashboard มีตารางสำหรับแสดงข้อมูล ได้แก่
+
+- Customer ID
+- Room Number
+- Total Bill
+
+ตารางพัฒนาด้วย DataTables เพื่อช่วยจัดรูปแบบและแสดงข้อมูลผู้เช่าจากฐานข้อมูล
+
+## Front-end & Back-end Connection
+
+หน้าเว็บใช้ JavaScript `fetch()` ส่งข้อมูลจาก Form ไปยัง PHP และใช้ PHP เชื่อมต่อกับ MySQL
+
+ตัวอย่างการทำงาน
+
+```text
+HTML Form
+   ↓
+JavaScript / Fetch
+   ↓
+PHP
+   ↓
+MySQL
+   ↓
+SQL Query
+   ↓
+JSON
+   ↓
+Dashboard
+```
+
+ส่วนการบันทึกข้อมูลใน PHP ใช้ Prepared Statements และ Transaction สำหรับส่งข้อมูลเข้าแต่ละตาราง
+
+## Skills Demonstrated
+
+- Web Application Development
+- Relational Database
+- MySQL
+- SQL Queries
+- PHP Back-end
+- HTML & CSS
+- JavaScript
+- Front-end / Back-end Integration
+- Form Handling
+- Prepared Statements
+- Database Transactions
+- Data Visualization
+- Dashboard Development
+- Chart.js
+- DataTables
+
+## Project Activities
+
+โปรเจกต์นี้ครอบคลุมตั้งแต่การออกแบบโครงสร้างข้อมูล การสร้างหน้าเว็บสำหรับกรอกข้อมูล การเชื่อมต่อ PHP กับ MySQL การเขียน SQL สำหรับบันทึกและดึงข้อมูล ไปจนถึงการนำข้อมูลจากฐานข้อมูลมาแสดงเป็น Dashboard
 
 ## Project Structure
 
@@ -116,60 +247,77 @@ web-data-management-dashboard/
 ```
 
 ## ERD
-โครงสร้างฐานข้อมูลและความสัมพันธ์ระหว่าง Room, Customer, Bill และ Rate
+
+โครงสร้างฐานข้อมูลและความสัมพันธ์ระหว่างข้อมูล Room, Customer, Bill และ Rate
+
 <p align="center">
   <img src="web-data-management-dashboard/database/RED.png" width="750" alt="Apartment Management System ERD">
 </p>
 
-
 ## Application Screenshots
 
-ตัวอย่างหน้าจอการทำงานของระบบ ตั้งแต่หน้าหลัก การจัดการข้อมูลห้องพัก
-ข้อมูลลูกค้า อัตราค่าสาธารณูปโภค การออกบิล และ Dashboard สำหรับสรุปข้อมูล
-
 ### 1. Home Page
+
+หน้าหลักของระบบสำหรับเข้าสู่ส่วนจัดการ Room, Customer, Bill และ Rate
+
 <p align="center">
   <img src="web-data-management-dashboard/screenshots/01-home.png" width="750" alt="Home Page">
 </p>
 
 ### 2. Main Menu
+
+เมนูสำหรับเลือกส่วนที่ต้องการใช้งานภายในระบบ
+
 <p align="center">
   <img src="web-data-management-dashboard/screenshots/02-main-menu.png" width="750" alt="Main Menu">
 </p>
 
 ### 3. Room Management
+
+แบบฟอร์มสำหรับบันทึกข้อมูลห้องพัก
+
 <p align="center">
   <img src="web-data-management-dashboard/screenshots/03-room-form.png" width="750" alt="Room Management">
 </p>
 
 ### 4. Customer Management
+
+แบบฟอร์มสำหรับบันทึกข้อมูลผู้เช่าและหมายเลขห้อง
+
 <p align="center">
   <img src="web-data-management-dashboard/screenshots/04-customer-form.png" width="750" alt="Customer Management">
 </p>
 
 ### 5. Utility Rate Management
+
+แบบฟอร์มสำหรับบันทึกอัตราค่าน้ำและค่าไฟ
+
 <p align="center">
   <img src="web-data-management-dashboard/screenshots/05-rate-form.png" width="750" alt="Utility Rate Management">
 </p>
 
 ### 6. Bill Management
+
+แบบฟอร์มสำหรับบันทึกค่าไฟ ค่าน้ำ และค่าเช่าของผู้เช่า
+
 <p align="center">
   <img src="web-data-management-dashboard/screenshots/06-bill-form.png" width="750" alt="Bill Management">
 </p>
 
 ### 7. Dashboard
+
+Dashboard สำหรับดูจำนวนห้อง จำนวนผู้เช่า ยอดบิลรวม กราฟยอดบิล สถานะห้อง และข้อมูลผู้เช่า
+
 <p align="center">
   <img src="web-data-management-dashboard/screenshots/07-dashboard.png" width="750" alt="Dashboard">
 </p>
 
-> **หมายเหตุเกี่ยวกับ Dashboard:** ภาพตัวอย่างแสดงส่วนติดต่อผู้ใช้ของ Dashboard สำหรับ Portfolio โดยข้อมูลบน Dashboard จะถูกดึงจากฐานข้อมูล MySQL ผ่าน PHP Back-end เมื่อระบบทำงานในสภาพแวดล้อมที่เชื่อมต่อฐานข้อมูล
+> **หมายเหตุ:** Dashboard ดึงข้อมูลผ่าน PHP Back-end จากฐานข้อมูล MySQL ดังนั้นเมื่อเปิดเฉพาะไฟล์ Front-end โดยไม่ได้เชื่อมต่อฐานข้อมูล ค่า KPI กราฟ และตารางอาจไม่แสดงข้อมูล
 
 ## Project Type
 
 **Academic Project — Web Application & Relational Database Development**
 
-โปรเจกต์นี้พัฒนาขึ้นเพื่อประยุกต์ใช้การออกแบบฐานข้อมูลเชิงสัมพันธ์
-การพัฒนา Web Application การเชื่อมต่อ Front-end กับ PHP/MySQL
-การจัดการข้อมูลด้วย SQL และการนำข้อมูลมาแสดงผลผ่าน Dashboard
+โปรเจกต์นี้จัดทำขึ้นเพื่อฝึกการพัฒนา Web Application ที่เชื่อมต่อกับฐานข้อมูล ตั้งแต่การรับข้อมูลผ่าน Form การจัดเก็บข้อมูลด้วย MySQL การใช้ PHP และ SQL ใน Back-end ไปจนถึงการนำข้อมูลมาแสดงผลผ่าน Dashboard
 
-> **Note:** ข้อมูลที่แสดงใน Repository นี้ใช้เพื่อการศึกษาและการนำเสนอผลงานใน Portfolio
+> **Note:** ข้อมูลและระบบที่แสดงใน Repository นี้จัดทำขึ้นเพื่อการศึกษาและการนำเสนอผลงานใน Portfolio
